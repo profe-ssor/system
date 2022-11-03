@@ -9,6 +9,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 <style>
+    body {
+	
+		background: #19aa8d;
+	}
+
 	.login-form {
 		width: 340px;
     	margin: 50px auto;
@@ -21,6 +26,7 @@
     }
     .login-form h2 {
         margin: 0 0 15px;
+        color: blue;
     }
     .form-control, .btn {
         min-height: 38px;
@@ -30,6 +36,10 @@
         font-size: 15px;
         font-weight: bold;
     }
+
+    .p {
+        color: #fff;
+    }
 </style>
 </head>
 <body>
@@ -37,7 +47,7 @@
     <form method= "POST" action="" >
         {% csrf_token %}
        
-        <h2 class="text-center">Log in</h2>     
+        <h2 class="text-center"><strong>Log in</strong></h2>     
         
         <div class="form-group">
             <input type="text" name="username" class="form-control" placeholder="Username" required="required">
@@ -51,12 +61,12 @@
         {% for message in messages %}
         <p id="message">{{ message}}</p>
         {% endfor %}
-        <div class="form">
-            
+        <div class="clearfix">
+            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
             <a href="#" class="pull-right">Forgot Password?</a>
-        </div>        
+        </div>    
     </form>
-    <p class="text-center"><a href="{% url 'register' %}">Create an Account, Register Here!!</a></p>
+    <strong> <h4 class="text-center"><a href="{% url 'register' %} " style="color: white;">Create an Account, Register Here!!</a></h4></strong>
 </div>
 </body>
 </html>                                		
